@@ -1,0 +1,14 @@
+{% extends 'todo/layout.html' %}
+
+{% block title %}Editar{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button> Editar Actividad </button>
+</form>
+
+{% endblock %}
+

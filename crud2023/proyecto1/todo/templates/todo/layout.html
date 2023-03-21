@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %} - MIS TAREAS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+    <title>mi crud</title>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+        <h1>MIS TAREAS</h1>
+        {% block content %}
+        <ul>
+            {% for tarea in tareas %}
+                 <li>{{ tarea }}</li>
+                 <a href="{% url 'eliminar' tarea.id %}" class="btn btn-danger">Eliminar</a>
+                 <button><a href="{% url 'editar' tarea.id %}">Editar</a></button>
+            {% endfor %}
+
+        </ul>
+
+        
+        {% endblock %}
+       
+        <a href="{% url 'agregar' %}" class="btn btn-success">Agregar Tarea</a>
+       
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+    </body>
+<!-- Background image -->
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1493997181344-712f2f19d87a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80');
+    height: 6000px;
+  "
+></div>
+<!-- Background image -->
+</html>
+

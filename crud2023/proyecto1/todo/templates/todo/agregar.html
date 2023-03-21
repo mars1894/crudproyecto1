@@ -1,0 +1,13 @@
+{% extends 'todo/layout.html' %}
+
+{% block title %}Agregar{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button> Agregar Tarea </button>
+</form>
+
+{% endblock %}
